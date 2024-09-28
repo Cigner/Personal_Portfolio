@@ -99,7 +99,7 @@ const About = ({selectedPanel, onSelectAboutOption, contactRef}) => {
                                 <button className={`about__nav-button ${selectedPanel == 2 ? 'active' : ''}`} onClick={() => { carouselRef.current.moveTo(2); onSelectAboutOption(2); setTimeout(() => {setIsSkillsLoading(true)}, 1000)}}>MY SKILLS</button>
                             </div>
                         </div>
-                        <Carousel ref={carouselRef} showArrows={false} showStatus={false} showIndicators={false} showThumbs={false} dynamicHeight={true}>
+                        <Carousel ref={carouselRef} showArrows={false} showStatus={false} showIndicators={false} showThumbs={false} dynamicHeight={true} swipeable={false}>
                             <div className='about__about-me-section'>
                                 <div className='about__image-container'>
                                     <div className='about__image'>

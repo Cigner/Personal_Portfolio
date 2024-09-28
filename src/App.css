@@ -75,3 +75,7 @@
     overflow-x: hidden;
     background: linear-gradient(165deg ,var(--background-black-dark), var(--background-black-light));
   }
+
+  .App {
+    overflow-x: hidden !important;
+  }

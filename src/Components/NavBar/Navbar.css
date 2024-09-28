@@ -115,6 +115,7 @@
     opacity: 1 !important;
     right: -128px;
     top: 0;
+    z-index: 20 !important;
 }
 
 .navbar__list > button {

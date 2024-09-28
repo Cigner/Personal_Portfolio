@@ -81,6 +81,10 @@
     scale: 2;
 }
 
+.react-multiple-carousel__arrow {
+    z-index: 2 !important;
+}
+
 .testimonials__top {
     display: flex;
     padding: 24px;
