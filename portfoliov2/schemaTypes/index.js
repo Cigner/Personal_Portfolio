@@ -1,3 +1,3 @@
-import { projectsType, socialProjectsType, socialType, experienceType, skillsType, referencesType, collaborationTypes, pagecontentTypes } from "./eventTypes";
+import { projectsType, socialProjectsType, categoriesProjectsType, socialType, experienceType, skillsType, referencesType, collaborationTypes, pagecontentTypes } from "./eventTypes";
 
-export const schemaTypes = [projectsType, socialProjectsType, socialType, experienceType, skillsType, referencesType, collaborationTypes, pagecontentTypes];
+export const schemaTypes = [projectsType, socialProjectsType, categoriesProjectsType, socialType, experienceType, skillsType, referencesType, collaborationTypes, pagecontentTypes];

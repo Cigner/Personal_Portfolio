@@ -1,0 +1,29 @@
+.collabs__container {
+    min-height: 104px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+    background-color: var(--secondary-blue);
+    box-shadow: 0 0 8px 2px rgba(0,0,0,0.25);
+    gap: 64px;
+    row-gap: 48px;
+    padding: 24px;
+}
+
+.collab {
+    max-height: 80px;
+    max-width: 160px;
+}
+
+@media (max-width: 500px) {
+    .collabs__container {
+        gap: 40px !important;
+        row-gap: 32px !important;
+    }
+
+    .collab {
+        max-height: 64px;
+        max-width: 140px;
+    }
+}

@@ -1,5 +1,6 @@
 import { defineField, defineType } from 'sanity';
 
+
 //
 // SET OF OPTIONS FOR LINKS IN INDIVIDUAL PROJECTS
 //
@@ -14,21 +15,42 @@ export const socialProjectsType = defineType({
         type: 'string'
       },
       {
-        name: 'icon',
-        title: 'Icon',
-        type: 'image',
-        options: {
-          hotspot: true, 
-        },
+        name: 'svgIcon',
+        title: 'SVG Icon',
+        type: 'inlineSvg',
       },
       {
         name: 'color',
-        title: 'Colour',
-        type: 'string',
-        description: 'HEX value of colour (eg. #123456)'
-      }
+        title: 'Color',
+        type: 'color',
+        options: {
+          disableAlpha: true,
+        },
+        validation: Rule => Rule.required().error('Color is required'),
+      },
     ],
   })
+
+//
+// SET OF CATEGORIES FOR PROJECTS
+//
+export const categoriesProjectsType = defineType({
+  name: 'categoriesprojects',
+  title: 'Project Categories',
+  type: 'document',
+  fields: [
+    {
+      name: 'name',
+      title: 'Name',
+      type: 'string'
+    },
+    {
+      name: 'svgIcon',
+      title: 'SVG Icon',
+      type: 'inlineSvg',
+    }
+  ],
+})
 
 //
 // PROJECTS SECTION
@@ -48,19 +70,8 @@ export const projectsType = defineType({
         }),
         defineField({
             name: 'Category',
-            type: 'string',
-            options: {
-                list: [{
-                    title: 'WEB',
-                    value: 'web'
-                }, {
-                    title: 'GAME',
-                    value: 'game'
-                }, {
-                    title: 'In Progress',
-                    value: 'progress'
-                }]
-            }
+            type: 'reference',
+            to: [{type: 'categoriesprojects'}]
         }),
         defineField({
             name: 'Images',
@@ -105,18 +116,18 @@ export const socialType = defineType({
           type: 'string'
         },
         {
-          name: 'icon',
-          title: 'Icon',
-          type: 'image',
-          options: {
-            hotspot: true, 
-          },
+          name: 'svgIcon',
+          title: 'SVG Icon',
+          type: 'inlineSvg',
         },
         {
           name: 'color',
-          title: 'Colour',
-          type: 'string',
-          description: 'HEX value of colour (eg. #123456)'
+          title: 'Color',
+          type: 'color',
+          options: {
+            disableAlpha: true,
+          },
+          validation: Rule => Rule.required().error('Color is required'),
         },
         {
             name: 'url',
@@ -307,11 +318,23 @@ export const pagecontentTypes = defineType({
     type: 'document',
     fields: [
         {
-            name: 'headtext',
-            title: 'Header Text',
+            name: 'headtext1',
+            title: 'Header Text - first line',
             description: 'Small text below the name.',
             type: 'string'
         },
+        {
+          name: 'headtext2',
+          title: 'Header Text - second line',
+          description: 'Small text below the name.',
+          type: 'string'
+      },
+      {
+        name: 'headtext3',
+        title: 'Header Text - third line',
+        description: 'Small text below the name.',
+        type: 'string'
+    },
         {
             name: 'headimage',
             title: 'Main Image',

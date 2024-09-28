@@ -1,0 +1,144 @@
+.navbar__container {
+    width: 100%;
+    height: 64px;
+    position: fixed;
+    top: 0;
+    background-color: rgba(255, 255, 255, 0.05);
+    box-shadow: 0 4px 8px 2px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(9px);
+    z-index: 20;
+}
+
+.navbar {
+    height: 100%;
+}
+
+.navbar__wide {
+    display: flex;
+    width: calc(100% - 48px);
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    margin-inline: 24px;
+}
+
+.navbar__menu {
+    display: flex;
+    list-style: none;
+    gap: 32px;
+}
+
+.navbar__menu button {
+    cursor: pointer;
+    background: none;
+    border: none;
+    font-size: 1rem;
+    font-family: 'montserrat';
+    font-weight: 300;
+    color: var(--white);
+    padding: 0;
+    position: relative;
+    transition: 0.25s;
+    outline: none;
+}
+
+.navbar__menu button::before {
+    content: '';
+    position: absolute;
+    width: 40px;
+    height: 2px;
+    background: linear-gradient(90deg ,var(--primary-dark), var(--primary-light));
+    margin-bottom: -4px;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 2px;
+    transition: 0.1s;
+    opacity: 0;
+}
+
+.navbar__menu button:hover::before, .navbar__menu button:focus::before {
+    opacity: 1;
+}
+
+.navbar__social {
+    height: 100%;
+    width: fit-content;
+    display: flex;
+    gap: 12px;
+    align-items: center;
+}
+.navbar__social a {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background-color: var(--white);
+    transition: .15s;
+    opacity: 0.5;
+    display: grid;
+    place-items: center;
+    fill: var(--secondary-blue);
+}
+
+.navbar__social a:hover, .navbar__social a:focus {
+    opacity: 1;
+}
+
+.navbar__social a div {
+    width: 16px;
+    display: grid;
+    place-items: center;
+}
+
+.navbar__short {
+    width: calc(100% - 48px);
+    height: 64px;
+    margin-inline: 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar__short > button {
+    outline: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.navbar__list {
+    position: fixed;
+    width: calc(80% + 128px);
+    min-width: 392px;
+    height: 100vh;
+    background-color: var(--secondary-blue);
+    opacity: 1 !important;
+    right: -128px;
+    top: 0;
+}
+
+.navbar__list > button {
+    outline: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    margin: 16px 24px;
+}
+
+.navbar__list > .navbar__menu {
+    margin-top: 64px;
+    flex-direction: column;
+    align-items: start !important;
+    margin-left: 24px;
+}
+
+.navbar__list > .navbar__menu button::before {
+    left: 24px !important;
+}
+
+.navbar__list .navbar__social {
+    margin-left: 24px;
+    height: 32px;
+    position: absolute;
+    bottom: 24px;
+}
